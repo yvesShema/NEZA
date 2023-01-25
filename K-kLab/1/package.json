@@ -1,0 +1,13 @@
+{
+  "name": "k-klab",
+  "version": "1.0.0",
+  "description": "just for tutorial",
+  "main": "1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node 1.js"
+    "dependencies" 
+  },
+  "author": "",
+  "license": "ISC"
+}

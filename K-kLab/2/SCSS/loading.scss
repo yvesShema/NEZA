@@ -1,0 +1,144 @@
+@import "variables";
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+main, footer{
+    display: none;
+}
+
+body{
+    background-color: $grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+}
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 95vh;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+@keyframes ring {
+    0%{
+        transform: rotate(0deg);
+        box-shadow: 1px 10px 2px $green;
+    }
+    50%{
+        transform: rotate(180deg);
+        box-shadow: 1px 10px 2px $red;
+    }
+    75%{
+        transform: rotate(270deg);
+        box-shadow: 1px 10px 2px turquoise;
+    }
+    100%{
+        transform: rotate(360deg);
+        box-shadow: 1px 10px 2px $green;
+    }
+}
+
+.ring{
+    position: absolute;
+    width: 45vw;
+    height: 45vw;
+    border-radius: 50%;
+    animation: ring 2s linear infinite;
+}
+
+.ring:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow:  0 0 5px rgba(217, 217, 217, .3);
+}
+
+@keyframes typing {
+    0%
+    {
+        width: 0;
+    }
+    90%
+    {
+        width: 100%;
+    }
+}
+
+span{
+    position: relative;
+    color: $white;
+    font-family: $font-family;
+    font-weight: map-get($font-weights, "bold");
+    font-size: 1.25rem;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    animation: typing 3s steps(24);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@keyframes blinkCursor {
+    0%,75%
+    {
+        opacity: 1;
+    }
+
+    76%, 100%
+    {
+        opacity: 0;
+    }
+    
+}
+
+span:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: $green;
+    animation: blinkCursor 0.8s steps(3) infinite;
+}
+
+@media screen and (max-width: $tablet){
+    .ring{
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: $tablet){
+    .ring{
+        width: 30rem;
+        height: 30rem;
+    }
+}
+
+@media screen and (min-width: $desktop){
+    .ring{
+        width: 35rem;
+        height: 35rem;
+    }
+
+    span{
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,50 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop. 
+
+******************************************************************/
+
+.formobile{
+	display:none;
+}
+
+.forpc{
+	display:inline-block;
+}
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+/*
+.isotope-item{
+	
+	float:left!important;
+	width: 33%!important;
+	height: auto!important;
+	padding: 0px;
+	margin: 0px;
+	img{
+		max-width: 100%!important;
+		position: relative!important;
+	}
+}
+*/
+
+.wrap-port{
+	width:900px !important;
+}
+
+.slide-home{
+	top:45% !important;
+	left:20%!important;
+	//background-color: $black;
+	.circle{
+		top:30px !important;
+		right: 30% !important;
+	}
+}
